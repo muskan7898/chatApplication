@@ -6,6 +6,13 @@ import {
 } from 'routing-controllers'
 import { Container } from 'typedi'
 import 'reflect-metadata'
+import {ConfigService} from "@src/database/common/services/ConfigService";
+import dotenv from 'dotenv'
+
+
+dotenv.config({
+  path: `.env`,
+});
 
 class Server {
   private static app = express();
@@ -38,4 +45,5 @@ class Server {
 }
 
 // starting the server
-Server.start(4040);
+const configService = Container.get(ConfigService);
+Server.start(configService.getPort());
