@@ -1,11 +1,3 @@
-interface User{
-  id : string;
-  name : string;
-  email : string;
-  createdat : Date;
-  updatedat : Date;
-}
-
 interface Company {
   id: string; // Primary Key
   name: string;
@@ -19,7 +11,7 @@ interface Conversation{
   id : string;
   companyId : string; // fk to company
   userId : string; // fk to user
-  status : string; 
+  status : string;
   createdat : Date;
 }
 
@@ -27,7 +19,7 @@ interface Message{
   id : string;
   conversationId : string; //fk to conversation
   senderId : string; // fk to user or company
-  content : string; 
+  content : string;
   isRead : boolean;
   createdat : Date;
 }
