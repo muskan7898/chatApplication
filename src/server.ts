@@ -2,16 +2,24 @@ interface User{
   id : string;
   name : string;
   email : string;
-  Usertype : 'company' | 'customer'
   createdat : Date;
   updatedat : Date;
 }
+
+interface Company {
+  id: string; // Primary Key
+  name: string;
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 
 interface Conversation{
   id : string;
   companyId : string; // fk to company
   userId : string; // fk to user
-  status : string; // 'open' | 'closed'
+  status : string; 
   createdat : Date;
 }
 
