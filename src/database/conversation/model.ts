@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-interface Conversation{
+export interface Conversation{
   companyId : string; // fk to company
   userId : string; // fk to user
   status : string;
-  createdat : Date;
+  createdAt : Date;
 }
 
 interface MongoConversation extends Conversation, mongoose.Document{};
@@ -25,7 +25,7 @@ const ConversationSchema = new mongoose.Schema<MongoConversation>({
     required: true,
     trim: true
   },
-  createdat: {
+  createdAt: {
     type: Date,
     default: Date.now
   }

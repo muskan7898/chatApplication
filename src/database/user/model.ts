@@ -4,8 +4,8 @@ import {model} from "mongoose";
 export interface User {
   name : string;
   email : string;
-  createdat : Date;
-  updatedat : Date;
+  createdAt : Date;
+  updatedAt : Date;
 }
 
 interface MongoUser extends User, mongoose.Document {}
@@ -22,11 +22,11 @@ const UserSchema = new mongoose.Schema<MongoUser>({
     trim: true,
     unique: true
   },
-  createdat: {
+  createdAt: {
     type: Date,
     default: Date.now
   },
-  updatedat: {
+  updatedAt: {
     type: Date,
     default: Date.now
   }

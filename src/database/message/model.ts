@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
 
-interface Message{
+export interface Message{
   conversationId : string; //fk to conversation
   senderId : string; // fk to user or company
   content : string;
   isRead : boolean;
-  createdat : Date;
+  createdAt : Date;
 }
-
 
 interface MongoMessage extends Message, mongoose.Document{};
 
@@ -31,7 +30,7 @@ const MessageScheme = new mongoose.Schema<MongoMessage>({
     type: Boolean,
     default: false
   },
-  createdat: {
+  createdAt: {
     type: Date,
     default: Date.now
   }

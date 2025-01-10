@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
-interface Company {
+export interface CompanyUser {
   name: string;
   email: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-interface MongoCompany extends Company, mongoose.Document {};
+interface MongoCompany extends CompanyUser, mongoose.Document {};
 
 const CompanySchema = new mongoose.Schema<MongoCompany>({
   name: {
@@ -31,4 +31,4 @@ const CompanySchema = new mongoose.Schema<MongoCompany>({
   }
 });
 
-export const CompanyModel = mongoose.model("company", CompanySchema);
+export const CompanyModel = mongoose.model("companyuser", CompanySchema);
