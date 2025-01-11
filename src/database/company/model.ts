@@ -31,4 +31,4 @@ const CompanySchema = new mongoose.Schema<MongoCompany>({
   }
 });
 
-export const CompanyModel = mongoose.model("companyuser", CompanySchema);
+export const CompanyModel = mongoose.model("company-user", CompanySchema);

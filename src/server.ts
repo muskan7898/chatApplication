@@ -16,6 +16,7 @@ dotenv.config({
 
 class Server {
   private static app = express();
+  
 
   private static addMiddleWares() {
     this.app.use(express.json());
@@ -41,6 +42,8 @@ class Server {
     this.app.listen(port, () => {
       console.log(`Listening on port ${port}`);
     })
+    this.app.get('/', (req, res) => {
+      res.send('Hello World');});
   }
 }
 
