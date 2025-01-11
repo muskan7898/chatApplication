@@ -1,9 +1,15 @@
 import mongoose from "mongoose";
 
+export enum ConversationStatus {
+  RESOLVED = "RESOLVED",
+  WAITING_ON_CUSTOMER = "WAITING_ON_CUSTOMER",
+  WAITING_ON_INTERNAL_TEAM = "WAITING_ON_INTERNAL_TEAM"
+}
+
 export interface Conversation{
   companyId : string; // fk to company
   userId : string; // fk to user
-  status : string;
+  status : ConversationStatus;
   createdAt : Date;
 }
 
@@ -22,6 +28,7 @@ const ConversationSchema = new mongoose.Schema<MongoConversation>({
   },
   status: {
     type: String,
+    enum: ["RESOLVED", "WAITING_ON_CUSTOMER", "WAITING_ON_INTERNAL_TEAM"],
     required: true,
     trim: true
   },

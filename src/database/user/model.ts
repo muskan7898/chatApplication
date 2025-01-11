@@ -1,16 +1,16 @@
-import * as mongoose from "mongoose";
-import {model} from "mongoose";
+import {model, Schema} from "mongoose";
 
 export interface User {
   name : string;
   email : string;
+  phoneNumber : string;
   createdAt : Date;
   updatedAt : Date;
 }
 
-interface MongoUser extends User, mongoose.Document {}
+interface MongoUser extends User, Document {}
 
-const UserSchema = new mongoose.Schema<MongoUser>({
+const UserSchema = new Schema<MongoUser>({
   name: {
     type: String,
     required: true,
@@ -21,6 +21,11 @@ const UserSchema = new mongoose.Schema<MongoUser>({
     required: true,
     trim: true,
     unique: true
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+    trim: true
   },
   createdAt: {
     type: Date,

@@ -16,7 +16,7 @@ dotenv.config({
 
 class Server {
   private static app = express();
-  
+
 
   private static addMiddleWares() {
     this.app.use(express.json());
