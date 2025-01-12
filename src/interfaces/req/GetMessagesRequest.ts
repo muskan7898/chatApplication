@@ -1,0 +1,3 @@
+interface GetMessagesRequest {
+  conversationId: string;
+}
